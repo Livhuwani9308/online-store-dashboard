@@ -1,11 +1,108 @@
 <div [class.dark]="themeService.isDarkMode()" class="min-h-screen bg-gray-50 dark:bg-gray-900">
+  <!-- NAVBAR -->
   <nav class="bg-white dark:bg-gray-800 shadow-md">
-    <div class="container mx-auto px-4 py-4 flex justify-between items-center">
-      <h1 class="text-2xl font-bold text-blue-600 dark:text-blue-400">Dashboard</h1>
+    <div class="container mx-auto px-5 py-4 flex justify-between items-center">
+      <!-- LEFT SIDE -->
+      <div class="flex items-center gap-4">
+        <!-- TOGGLE BUTTON -->
+        <button
+          (click)="toggleSidebar()"
+          class="p-2 rounded-md hover:bg-gray-200 dark:hover:bg-gray-700 transition"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-6 w-6 text-gray-700 dark:text-gray-200"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"
+            />
+          </svg>
+        </button>
+
+        <h1 class="text-2xl font-bold text-blue-600 dark:text-blue-400">Dashboard</h1>
+      </div>
+
+      <!-- THEME BUTTON -->
       <button (click)="themeService.toggleTheme()" class="px-4 py-2">
         {{ themeService.isDarkMode() ? '☀️' : '🌙' }}
       </button>
     </div>
   </nav>
-  <router-outlet></router-outlet>
+
+  <!-- BODY -->
+  <div class="flex">
+    <!-- SIDENAV -->
+    <aside
+      [ngClass]="isSidebarOpen ? 'w-64' : 'w-20'"
+      class="bg-white dark:bg-gray-800 shadow-lg min-h-screen transition-all duration-300 ease-in-out overflow-hidden"
+    >
+      <ul class="mt-5 space-y-6">
+        <!-- Products -->
+        <li
+          [ngClass]="
+            isSidebarOpen ? 'flex items-center gap-4 px-6' : 'flex items-center justify-center'
+          "
+          class="h-14 hover:text-blue-600 cursor-pointer transition"
+        >
+          <i class="fa-solid fa-box text-2xl"></i>
+          <span *ngIf="isSidebarOpen">Products</span>
+        </li>
+
+        <!-- Categories -->
+        <li
+          [ngClass]="
+            isSidebarOpen ? 'flex items-center gap-4 px-6' : 'flex items-center justify-center'
+          "
+          class="h-14 hover:text-blue-600 cursor-pointer transition"
+        >
+          <i class="fa-solid fa-layer-group text-2xl"></i>
+          <span *ngIf="isSidebarOpen">Categories</span>
+        </li>
+
+        <!-- Users -->
+        <li
+          [ngClass]="
+            isSidebarOpen ? 'flex items-center gap-4 px-6' : 'flex items-center justify-center'
+          "
+          class="h-14 hover:text-blue-600 cursor-pointer transition"
+        >
+          <i class="fa-solid fa-users text-2xl"></i>
+          <span *ngIf="isSidebarOpen">Users</span>
+        </li>
+
+        <!-- Shopping Cart -->
+        <li
+          [ngClass]="
+            isSidebarOpen ? 'flex items-center gap-4 px-6' : 'flex items-center justify-center'
+          "
+          class="h-14 hover:text-blue-600 cursor-pointer transition"
+        >
+          <i class="fa-solid fa-cart-shopping text-2xl"></i>
+          <span *ngIf="isSidebarOpen">Shopping Cart</span>
+        </li>
+
+        <!-- Orders -->
+        <li
+          [ngClass]="
+            isSidebarOpen ? 'flex items-center gap-4 px-6' : 'flex items-center justify-center'
+          "
+          class="h-14 hover:text-blue-600 cursor-pointer transition"
+        >
+          <i class="fa-solid fa-receipt text-2xl"></i>
+          <span *ngIf="isSidebarOpen">Orders</span>
+        </li>
+      </ul>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="flex-1 p-6">
+      <router-outlet></router-outlet>
+    </main>
+  </div>
 </div>
