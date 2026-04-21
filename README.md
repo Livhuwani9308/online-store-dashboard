@@ -1,59 +1,48 @@
-# OnlineStoreDashboard
+# Product Analytics Dashboard
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.3.6.
+An Angular-based dashboard designed for product analytics, built with a modular architecture and clean coding practices.
 
-## Development server
+**Tech Stack:** Angular • TypeScript • TailwindCSS  
+**License:** MIT
 
-To start a local development server, run:
+---
 
-```bash
-ng serve
-```
+## 📖 Overview
+This project is a **Product Analytics Dashboard** built with Angular 20. It demonstrates how to structure applications using NgModules, which remain common in enterprise environments, even as Angular moves toward standalone components. The goal is to provide a practical example of working with legacy-style modular code while still applying modern development principles.
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+The dashboard includes **interactive analytics, chart visualizations, and advanced data handling**, all implemented with performance and scalability in mind. It follows SOLID principles to ensure clear separation of concerns and maintainability.
 
-## Code scaffolding
+---
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## ✨ Features
 
-```bash
-ng generate component component-name
-```
+### Core
+- **Analytics Dashboard** — Real-time KPIs and performance metrics  
+- **Sortable Data Tables** — Clickable headers with ascending/descending indicators  
+- **Search & Filters** — Category-based filtering with debounced input  
+- **Charts & Graphs** — Monthly sales trends powered by Chart.js  
+- **Pagination** — Server-driven pagination with page details  
+- **Theme Toggle** — Dark/light mode with persistence in localStorage  
+- **Responsive Layout** — TailwindCSS mobile-first design  
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+### Advanced
+- **Repository Pattern** — Abstracted data access layer  
+- **HTTP Interceptors** — Automatic token injection for API calls  
+- **Reactive State** — RxJS BehaviorSubjects with async pipes  
+- **OnPush Change Detection** — Optimized rendering strategy  
+- **Lazy Loading** — Modules loaded only when needed  
+- **SOLID Principles** — Maintainable, testable, and extensible architecture  
 
-```bash
-ng generate --help
-```
+---
 
-## Building
+## 🚀 Getting Started
 
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
+### Requirements
+- Node.js ≥ 18.x  
+- npm ≥ 9.x  
+- Angular CLI ≥ 20.x  
 
 ```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+node --version   # >= 18.x
+npm --version    # >= 9.x
+ng version       # >= 20.x
